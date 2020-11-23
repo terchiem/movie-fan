@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const Movie = new Schema(
   {
-    movieId: { type: String, required: true },
+    _id: { type: String, required: true },
     upVote: { type: Number, required: true },
     downVote: { type: Number, required: true },
   }

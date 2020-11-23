@@ -4,7 +4,8 @@ require("dotenv").config();
 
 const DB_CONFIG = {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false,
 };
 
 mongoose
