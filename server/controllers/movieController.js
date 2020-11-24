@@ -10,7 +10,7 @@ const getMovie = async (req, res, next) => {
   const movie = await Movie.findById(req.params.id);
 
   if (!movie) {
-    next(new ExpressError('Could not find movie', 404));
+    return next(new ExpressError('Could not find movie', 404));
   }
 
   return res.send(movie);
@@ -50,7 +50,7 @@ const addVote = async (req, res, next) => {
   const vote = VOTES[req.params.vote];
 
   if (!vote) {
-    next(new ExpressError(`Invalid 'vote' parameter`, 400));
+    return next(new ExpressError(`Invalid 'vote' parameter`, 400));
   }
 
   const movie = await Movie.findByIdAndUpdate(req.params.id, {
@@ -60,10 +60,10 @@ const addVote = async (req, res, next) => {
   });
 
   if (!movie) {
-    next(new ExpressError('Could not update movie', 400));
+    return next(new ExpressError('Could not update movie', 400));
   }
 
-  return res.send(movie);
+  return res.json({ message: 'success' });
 }
 
 module.exports = {
