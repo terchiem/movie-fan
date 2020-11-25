@@ -1,10 +1,13 @@
 import React from 'react';
 import './MovieSearch.css';
 
+import SearchBar from '../SearchBar/SearchBar';
+
 function MovieSearch() {
   return (
     <div className="MovieSearch">
-      <p>I'm a search bar</p>
+      <SearchBar />
+
       <p>I'm the movie list</p>
     </div>
   )
