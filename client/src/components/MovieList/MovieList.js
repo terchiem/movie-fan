@@ -1,5 +1,8 @@
 import React from 'react';
+import MovieListItem from '../MovieListItem/MovieListItem';
 import './MovieList.css';
+
+
 
 const TEST_MOVIES = [
   { id: 1, title: 'movie 1', year: 2000 },
@@ -11,7 +14,7 @@ function MovieList({ movies }) {
   return (
     <div className="MovieList">
       <ul>
-        {TEST_MOVIES.map(m => <li key={m.id}>{m.title} ({m.year})</li>)}
+        {TEST_MOVIES.map(m => <MovieListItem key={m.id} movie={m} />)}
       </ul>
     </div>
   )
