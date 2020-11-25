@@ -3,6 +3,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/Header/Header';
+import MovieDetails from './components/MovieDetails/MovieDetails';
+import MovieSearch from './components/MovieSearch/MovieSearch';
 
 function App() {
   return (
@@ -11,10 +13,10 @@ function App() {
         <Header />
 
         <Route exact path="/">
-          <p>I'm the root page</p>
+          <MovieSearch />
         </Route>
         <Route path="/:id">
-          <p>I'm a movie details page</p>
+          <MovieDetails />
         </Route>
       </BrowserRouter>
     </div>
