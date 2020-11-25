@@ -17,14 +17,14 @@ const getMovie = async (req, res, next) => {
 }
 
 /**
- * POST /:id
+ * POST /
  * Creates a new movie
  */
 
 const createMovie = async (req, res, next) => {
   try {
     const newMovie = new Movie({
-      _id: req.params.id,
+      _id: req.body.id,
       upVote: 0,
       downVote: 0
     });

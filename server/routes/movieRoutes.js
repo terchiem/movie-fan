@@ -7,8 +7,8 @@ const {
 
 const router = new express.Router();
 
+router.post("/", createMovie);
 router.get("/:id", getMovie);
-router.post("/:id", createMovie);
 router.patch("/:id/:vote", addVote);
 
 module.exports = router;
