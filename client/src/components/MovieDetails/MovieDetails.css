@@ -1,3 +1,47 @@
 .MovieDetails {
+  margin: 2em auto;
+}
 
+.details-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.details-wrapper > * {
+  padding: 2em;
+}
+
+.info h2 {
+  font-size: 32px;
+}
+
+.info h3 {
+  margin-top: 0.6em;
+}
+
+.votes {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.vote-group {
+  display: inline-block;
+  margin: 1em;
+  padding: 1em;
+  width: 12em;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.vote-group span {
+  margin-left: 0.4em;
+}
+
+.back-link {
+  margin: 2em;
+  padding: 0 1em;
+  border: 1px solid black;
+  border-radius: 6px;
+  color: #000;
+  text-decoration: none;
 }
