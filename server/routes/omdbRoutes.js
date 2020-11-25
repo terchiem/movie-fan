@@ -10,7 +10,7 @@ const OMDB_URL = `http://www.omdbapi.com/?type=movie&apikey=${process.env.OMDB_A
  */
 
 router.get('/search', async (req, res, next) => {
-  const { searchTerm } = req.body;
+  const { searchTerm } = req.query;
 
   if (!searchTerm) {
     return next(new ExpressError('Missing search term', 400));

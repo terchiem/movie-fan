@@ -1,4 +1,5 @@
-const express = require("express");
+const express = require('express');
+const cors = require('cors');
 const db = require('./db');
 
 const omdbRoutes = require('./routes/omdbRoutes');
@@ -9,6 +10,7 @@ const PORT = 3005;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+app.use(cors());
 app.use(express.json());
 
 app.use('/', movieRoutes);

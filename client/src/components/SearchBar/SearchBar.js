@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
 
-function SearchBar() {
+function SearchBar({ search }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleChange = (e) => {
@@ -10,7 +10,7 @@ function SearchBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submitted: ', searchTerm);
+    search(searchTerm);
   }
 
   return (
@@ -24,7 +24,9 @@ function SearchBar() {
           value={searchTerm}
           placeholder="Enter movie title..."
           onChange={handleChange}
-          />
+          required
+          minLength="2"
+        />
         <button>Ok</button>
       </form>
     </div>
