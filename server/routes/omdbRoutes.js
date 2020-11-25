@@ -38,7 +38,7 @@ router.get('/search', async (req, res, next) => {
  */
 
 router.get('/movie', async (req, res, next) => {
-  const { id } = req.body;
+  const { id } = req.query;
 
   if (!id) {
     return next(new ExpressError('Missing movie id', 400));
