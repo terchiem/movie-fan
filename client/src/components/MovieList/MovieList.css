@@ -1,3 +1,7 @@
 .MovieList {
+  margin: 1em 0;
+}
 
+.MovieList ul {
+  list-style: none;
 }

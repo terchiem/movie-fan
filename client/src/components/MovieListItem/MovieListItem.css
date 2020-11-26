@@ -1,3 +1,28 @@
 .MovieListItem {
+  border-bottom: 1px solid #ccc;
+  padding: 1em 2em;
+}
 
+.MovieListItem:hover {
+  background-color: #eee;
+}
+
+.MovieListItem:last-child {
+  border-bottom: none;
+}
+
+.MovieListItem a {
+  text-decoration: none;
+  color: #000;
+}
+
+.MovieListItem a:hover {
+  text-decoration: underline;
+}
+
+.MovieListItem span {
+  padding: 0 0.5em;
+  margin-left: 1em;
+  border: 1px solid #333;
+  border-radius: 6px;
 }

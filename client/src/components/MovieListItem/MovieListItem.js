@@ -6,10 +6,10 @@ function MovieListItem({ movie }) {
   const { id, title, year } = movie;
 
   return (
-    <div className="MovieListItem">
+    <li className="MovieListItem">
       <Link to={`/${id}`}>{title}</Link>
       <span>{year}</span>
-    </div>
+    </li>
   )
 }
 
