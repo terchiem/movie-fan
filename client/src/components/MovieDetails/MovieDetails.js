@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getMovie } from '../../utils/apiHelper';
+import useVotes from '../../hooks/useVotes';
 import './MovieDetails.css';
 
 import defaultPoster from '../../assets/default.png';
@@ -18,6 +19,13 @@ function MovieDetails() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
+  const {
+    upVotes,
+    downVotes,
+    fetchVotes,
+    addUpVote,
+    addDownVote
+   } = useVotes();
 
   /** Fetch movie data from OMDB with id parameter */
   useEffect(() => {
@@ -25,6 +33,7 @@ function MovieDetails() {
       try {
         setLoading(true);
         const fetchedMovie = await getMovie(id);
+        await fetchVotes(id)
         setMovie(fetchedMovie);
         setLoading(false);
       } catch (e) {
@@ -56,11 +65,11 @@ function MovieDetails() {
           <div className="votes">
             <button className="vote-group">
               <i className="fa fa-thumbs-up"></i>
-              <span>100</span>
+              <span>{upVotes}</span>
             </button>
             <button className="vote-group">
               <i className="fa fa-thumbs-down"></i>
-              <span>20</span>
+              <span>{downVotes}</span>
             </button>
           </div>
         </div>

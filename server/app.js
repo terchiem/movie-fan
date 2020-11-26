@@ -22,6 +22,7 @@ app.use(function(err, req, res, next) {
   console.error(err.stack);
 
   return res.json({
+    success: false,
     status: err.status,
     message: err.message
   });
