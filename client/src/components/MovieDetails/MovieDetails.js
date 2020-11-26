@@ -34,7 +34,9 @@ function MovieDetails() {
     fetchMovieDetails();
   }, []);
 
-  if (loading) return <div>Loading...</div>
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="MovieDetails">
@@ -50,7 +52,6 @@ function MovieDetails() {
           <p>{movie.actors}</p>
           <h3>Description</h3>
           <p>{movie.description}</p>
-
 
           <div className="votes">
             <button className="vote-group">
@@ -71,7 +72,7 @@ function MovieDetails() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default MovieDetails;
