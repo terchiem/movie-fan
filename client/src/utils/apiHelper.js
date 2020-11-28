@@ -19,8 +19,8 @@ export const getMovieVotes = async (id) => {
   return result.data;
 }
 
-export const createMovieVotes = async (id) => {
-  const result = await axios.post(BASE_URL, { id });
+export const createMovieVotes = async (id, title) => {
+  const result = await axios.post(BASE_URL, { id, title });
   return result.data;
 }
 

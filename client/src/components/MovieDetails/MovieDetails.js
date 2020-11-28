@@ -33,7 +33,7 @@ function MovieDetails() {
       try {
         setLoading(true);
         const fetchedMovie = await getMovie(id);
-        await fetchVotes(id)
+        await fetchVotes(fetchedMovie);
         setMovie(fetchedMovie);
         setLoading(false);
       } catch (e) {

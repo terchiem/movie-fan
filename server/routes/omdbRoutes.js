@@ -53,6 +53,7 @@ router.get('/movie', async (req, res, next) => {
 
   // trim extra fields from result
   const movie = {
+    id: result.data.imdbID,
     title: result.data.Title,
     released: result.data.Released,
     director: result.data.Director,

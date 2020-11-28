@@ -25,6 +25,7 @@ const createMovie = async (req, res, next) => {
   try {
     const newMovie = new Movie({
       _id: req.body.id,
+      title: req.body.title,
       upVote: 0,
       downVote: 0
     });
