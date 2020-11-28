@@ -27,7 +27,9 @@ function SearchBar({ search }) {
           required
           minLength="2"
         />
-        <button>Ok</button>
+        <button aria-label="Search">
+          <i className="fa fa-search" />
+        </button>
       </form>
     </div>
   )

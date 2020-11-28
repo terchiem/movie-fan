@@ -1,3 +1,23 @@
 .SearchBar {
+  margin: 1em auto;
+  --input-radius: 4px;
+}
 
+.SearchBar input,
+.SearchBar button {
+  border: 1px solid black;
+  padding: 0.3em 1em;
+}
+
+.SearchBar input {
+  min-width: 30%;
+  margin-left: 1em;
+  border-top-left-radius: var(--input-radius);
+  border-bottom-left-radius: var(--input-radius);
+}
+
+.SearchBar button {
+  border-top-right-radius: var(--input-radius);
+  border-bottom-right-radius: var(--input-radius);
+  cursor: pointer;
 }
