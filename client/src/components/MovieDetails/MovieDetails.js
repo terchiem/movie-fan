@@ -63,11 +63,19 @@ function MovieDetails() {
           <p>{movie.description}</p>
 
           <div className="votes">
-            <button className="vote-group">
+            <button
+              className="vote-button upvote"
+              aria-label="Add Up Vote"
+              onClick={() => addUpVote(id)}
+            >
               <i className="fa fa-thumbs-up"></i>
               <span>{upVotes}</span>
             </button>
-            <button className="vote-group">
+            <button
+              className="vote-button downvote"
+              aria-label="Add Down Vote"
+              onClick={() => addDownVote(id)}
+            >
               <i className="fa fa-thumbs-down"></i>
               <span>{downVotes}</span>
             </button>
