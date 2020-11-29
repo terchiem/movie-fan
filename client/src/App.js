@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { searchMovies } from './utils/apiHelper';
 import './App.css';
 
@@ -13,23 +13,22 @@ const TEST_MOVIES = [
 ]
 
 function App() {
+  const history = useHistory();
   const [movies, setMovies] = useState(TEST_MOVIES);
   const [loading, setLoading] = useState(false);
 
   const search = async (searchTerm) => {
+    history.push('/');
     setLoading(true);
     const movies = await searchMovies(searchTerm);
     setMovies(movies);
     setLoading(false);
-    // redirect to list view
   }
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header search={search} />
-        <Routes movies={movies} loading={loading} />
-      </BrowserRouter>
+      <Header search={search} />
+      <Routes movies={movies} loading={loading} />
     </div>
   );
 }
