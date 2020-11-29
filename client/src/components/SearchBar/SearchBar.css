@@ -5,7 +5,7 @@
 
 .SearchBar input,
 .SearchBar button {
-  border: 1px solid black;
+  border: 1px solid var(--primaryGreen);
   padding: 0.3em 1em;
 }
 
@@ -19,5 +19,11 @@
 .SearchBar button {
   border-top-right-radius: var(--input-radius);
   border-bottom-right-radius: var(--input-radius);
+  background-color: var(--primaryGreen);
+  color: var(--darkGreen);
   cursor: pointer;
+}
+
+.SearchBar button:hover {
+  background-color: var(--lightGreen);
 }

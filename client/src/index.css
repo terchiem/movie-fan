@@ -1,3 +1,14 @@
+:root {
+  --darkGray: #434144;
+  --midGray: #5a585c;
+  --lightGreen: #92fdc9;
+  --primaryGreen: #56E39F;
+  --darkGreen: #21563C;
+  --red: #cd2026;
+  --white: #f3f3f3;
+  --black: #111;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,6 +19,8 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--darkGray);
+  color: var(--white);
 }
 
 code {
