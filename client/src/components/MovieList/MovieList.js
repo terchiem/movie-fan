@@ -13,7 +13,7 @@ function MovieList({ movies }) {
           </ul>
         </>
       ) : (
-        <h3>No results found!</h3>
+        <p>No results found! Please enter a new movie title.</p>
       )}
     </div>
   )
