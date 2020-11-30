@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { getMovieVotes, createMovieVotes, upVote, downVote } from '../utils/apiHelper';
 
 export default function useVotes() {
@@ -12,7 +12,7 @@ export default function useVotes() {
    * @param {Object} movie - Fetched movie object from OMDB
    */
 
-  const fetchVotes = async (movie) => {
+  const fetchVotes = useCallback(async (movie) => {
     try {
       const result = await getMovieVotes(movie.id);
       setUpVotes(result.upVote);
@@ -21,7 +21,7 @@ export default function useVotes() {
       // Add movie votes in mongo db if it does not exist
       await createVotes(movie);
     }
-  }
+  }, []);
 
   const createVotes = async ({ id, title }) => {
     await createMovieVotes(id, title);
