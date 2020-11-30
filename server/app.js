@@ -6,7 +6,7 @@ const omdbRoutes = require('./routes/omdbRoutes');
 const movieRoutes = require('./routes/movieRoutes');
 
 const app = express();
-const PORT = 3005;
+const PORT = process.env.PORT || 3005;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
