@@ -16,11 +16,12 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--darkGray);
   color: var(--white);
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
 }
 
 code {
