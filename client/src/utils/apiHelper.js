@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:3005/';
+const BASE_URL = 'https://movie-fan-app.herokuapp.com/';
 const SEARCH_URL = BASE_URL + 'omdb/search';
 const GET_URL = BASE_URL + 'omdb/movie';
 
