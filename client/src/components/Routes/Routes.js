@@ -3,12 +3,13 @@ import { Route, Switch } from 'react-router-dom';
 
 import MovieList from '../MovieList/MovieList';
 import MovieDetails from '../MovieDetails/MovieDetails';
+import LoadSpinner from '../LoadSpinner/LoadSpinner';
 
 
 function Routes({ movies, loading }) {
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadSpinner />;
   }
 
   return (

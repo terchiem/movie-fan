@@ -4,16 +4,9 @@ import { getMovie } from '../../utils/apiHelper';
 import useVotes from '../../hooks/useVotes';
 import './MovieDetails.css';
 
-import defaultPoster from '../../assets/default.png';
+import LoadSpinner from '../LoadSpinner/LoadSpinner';
 
-// const TEST_MOVIE = {
-//   title: 'Test',
-//   released: '12 Jan 1993',
-//   director: 'Director',
-//   actors: 'Actors',
-//   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis augue ut enim fermentum lacinia eu a ipsum. Fusce mattis, arcu eu pulvinar maximus, purus mauris efficitur arcu, convallis malesuada justo nulla ac mauris. ',
-//   posterUrl: 'https://m.media-amazon.com/images/M/MV5BMTVmNDZjNjMtMDZjZi00ODMwLTlhNWQtZDhmZTE4ZjczM2I4XkEyXkFqcGdeQXVyNzgzODI1OTE@._V1_SX300.jpg'
-// }
+import defaultPoster from '../../assets/default.png';
 
 function MovieDetails() {
   const { id } = useParams();
@@ -44,7 +37,7 @@ function MovieDetails() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadSpinner />;
   }
 
   return (
