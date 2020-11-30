@@ -34,7 +34,7 @@ function MovieDetails() {
       }
     }
     fetchMovieDetails();
-  }, []);
+  }, [fetchVotes, id]);
 
   if (loading) {
     return <LoadSpinner />;
