@@ -1,12 +1,12 @@
 # Movie Fan
-This app allows a user to search for movies and see their details using [The Open Movie Database API](http://www.omdbapi.com/). A user can also add Upvotes/Downvotes to a movie, which is stored on a database for all to see.
+This app allows a user to search for movies and see their details using [The Open Movie Database API](http://www.omdbapi.com/). A user can also add upvotes/downvotes to a movie, which persists on a database for every user.
 
 [Live Site](https://movie-fan.netlify.app/)
 
 # Tech Stack
 
 * Frontend
-  * React & hooks
+  * React & Hooks
   * Axios
   * Hosted on Netlify (free tier)
 * Backend
@@ -45,6 +45,9 @@ This app allows a user to search for movies and see their details using [The Ope
 
 ### Pagination of search results
 - Right now the app only returns the first 10 search results from the OMDB API. The API has support for pages, so I would like to utilize pagination and allow the user to browse more search results.
+
+### Most upvoted/downvoted movies
+- Since it's possible to query movies by vote count, I would like to implement a feature where you can see the top 10 upvoted or downvoted movies currently on the database.
 
 ### Client and Server tests
 - Currently there are no written tests. At the very least, I would like to have render and snapshot tests for my frontend components and some route tests for my backend.
