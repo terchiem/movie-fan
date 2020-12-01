@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getMovie } from '../../utils/apiHelper';
 import useVotes from '../../hooks/useVotes';
 import './MovieDetails.css';
 
 import LoadSpinner from '../LoadSpinner/LoadSpinner';
+import NotFound from '../NotFound/NotFound';
 import defaultPoster from '../../assets/default.png';
 
 /**
@@ -18,7 +19,6 @@ import defaultPoster from '../../assets/default.png';
  */
 
 function MovieDetails() {
-  const history = useHistory();
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -38,10 +38,10 @@ function MovieDetails() {
         const fetchedMovie = await getMovie(id);
         await fetchVotes(fetchedMovie);
         setMovie(fetchedMovie);
-        setLoading(false);
       } catch (e) {
         console.log('ERROR:',e);
-        history.push('/not-found');
+      } finally {
+        setLoading(false);
       }
     }
     fetchMovieDetails();
@@ -49,6 +49,10 @@ function MovieDetails() {
 
   if (loading) {
     return <LoadSpinner />;
+  }
+
+  if (!movie) {
+    return <NotFound />;
   }
 
   return (
