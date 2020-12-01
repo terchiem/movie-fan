@@ -9,7 +9,7 @@ function MovieListItem({ movie }) {
 
   return (
     <li className="MovieListItem">
-      <Link to={`/${id}`}>{title}</Link>
+      <Link to={`/movie/${id}`}>{title}</Link>
       <span>{year}</span>
     </li>
   )

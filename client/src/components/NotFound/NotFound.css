@@ -1,0 +1,22 @@
+.NotFound {
+  margin: 1em;
+  text-align: center;
+}
+
+.NotFound a {
+  margin: 3em auto;
+  padding: 0.2em 1em;
+  border-radius: 6px;
+  border: 1px solid var(--darkGreen);
+  background-color: var(--primaryGreen);
+  color: var(--darkGreen);
+  text-decoration: none;
+}
+
+.NotFound a:hover {
+  background-color: var(--lightGreen);
+}
+
+.NotFound div {
+  margin: 2em;
+}

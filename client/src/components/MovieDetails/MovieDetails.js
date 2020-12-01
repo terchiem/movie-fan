@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { getMovie } from '../../utils/apiHelper';
 import useVotes from '../../hooks/useVotes';
 import './MovieDetails.css';
@@ -18,6 +18,7 @@ import defaultPoster from '../../assets/default.png';
  */
 
 function MovieDetails() {
+  const history = useHistory();
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -40,6 +41,7 @@ function MovieDetails() {
         setLoading(false);
       } catch (e) {
         console.log('ERROR:',e);
+        history.push('/not-found');
       }
     }
     fetchMovieDetails();
