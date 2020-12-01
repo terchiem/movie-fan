@@ -5,8 +5,17 @@ import useVotes from '../../hooks/useVotes';
 import './MovieDetails.css';
 
 import LoadSpinner from '../LoadSpinner/LoadSpinner';
-
 import defaultPoster from '../../assets/default.png';
+
+/**
+ * Details page for a movie.
+ * On load, it will use the id parameter to fetch the movie from OMDB.
+ * If the movie exists, it will then fetch its vote data from the DB.
+ *
+ * State:
+ *  movie - Movie object fetched from api
+ *  loading - boolean state to show loading indicator
+ */
 
 function MovieDetails() {
   const { id } = useParams();

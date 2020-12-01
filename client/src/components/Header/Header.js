@@ -4,6 +4,13 @@ import './Header.css';
 
 import SearchBar from '../SearchBar/SearchBar';
 
+/**
+ * Header component that is displayed on each page
+ *
+ * Props:
+ *  search - search function for the SearchBar component
+ */
+
 function Header({ search }) {
   return (
     <header className="Header">

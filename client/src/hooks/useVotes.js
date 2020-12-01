@@ -1,6 +1,10 @@
 import { useState, useCallback } from 'react';
 import { getMovieVotes, createMovieVotes, upVote, downVote } from '../utils/apiHelper';
 
+/**
+ * This custom hook is used to keep track of a movie's upvotes and downvotes
+ */
+
 export default function useVotes() {
   const [upVotes, setUpVotes] = useState(0);
   const [downVotes, setDownVotes] = useState(0);
@@ -18,10 +22,17 @@ export default function useVotes() {
       setUpVotes(result.upVote);
       setDownVotes(result.downVote);
     } catch (e) {
-      // Add movie votes in mongo db if it does not exist
+      // Movie does not exist
       await createVotes(movie);
     }
   }, []);
+
+  /**
+   * Creates the entry for a movie in the database.
+   *
+   * @param {String} id
+   * @param {String} title
+   */
 
   const createVotes = async ({ id, title }) => {
     await createMovieVotes(id, title);

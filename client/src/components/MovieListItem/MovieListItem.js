@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './MovieListItem.css';
 
+/** Movie list item which provides a link to its movie details page */
+
 function MovieListItem({ movie }) {
   const { id, title, year } = movie;
 

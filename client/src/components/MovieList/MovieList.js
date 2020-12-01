@@ -1,8 +1,16 @@
 import React from 'react';
-import MovieListItem from '../MovieListItem/MovieListItem';
 import './MovieList.css';
 
-function MovieList({ movies }) {
+import MovieListItem from '../MovieListItem/MovieListItem';
+import LoadSpinner from '../LoadSpinner/LoadSpinner';
+
+/** Displays a list of MovieListItem components from an array of movies */
+
+function MovieList({ movies, loading }) {
+  if (loading) {
+    return <LoadSpinner />;
+  }
+
   return (
     <div className="MovieList">
       {movies.length > 0 ? (

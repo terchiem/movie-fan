@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
 
+/**
+ * Search bar input component
+ *
+ * Props:
+ *  search - search function to be called on submit
+ *
+ * State:
+ *  searchTerm - text input state
+ */
+
 function SearchBar({ search }) {
   const [searchTerm, setSearchTerm] = useState('');
 
