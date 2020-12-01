@@ -1,6 +1,10 @@
 # Movie Fan
 This app allows a user to search for movies and see their details using [The Open Movie Database API](http://www.omdbapi.com/). A user can also add upvotes/downvotes to a movie, which persists on a database for every user.
 
+The frontend is a single page React app where a user can search for a movie by title and then go to a movie's details page to see its release year, director, actors, description and poster.
+
+This backend is a Node Express server which has endpoints that utilize the OMDb API to search for a movie or get a single movie. It also has endpoints to interact with the database to create or update a movie's upvotes and downvotes.
+
 [Live Site](https://movie-fan.netlify.app/)
 
 # Tech Stack
@@ -18,20 +22,20 @@ This app allows a user to search for movies and see their details using [The Ope
   * DB hosted on MongoDB Atlas (free tier)
 
 # Client Setup
-1.  Install [Node.js and npm](https://www.npmjs.com/get-npm)
-2.  Install project dependencies:
-    1. Navigate to the `/client` directory
-    2. Run command:
-        ```bash
-        npm install
-        ```
-3. Run the development server:
-    1.  Navigate to the `/client` directory
-    2.  Run command:
-        ```bash
-        npm start
-        ```
-4. Client should now be hosted on `localhost:3000`
+- Install [Node.js and npm](https://www.npmjs.com/get-npm)
+- Install project dependencies:
+  1. Navigate to the `/client` directory
+  2. Run command:
+    ```bash
+    npm install
+    ```
+- Run the development server:
+  1. Navigate to the `/client` directory
+  2. Run command:
+    ```bash
+    npm start
+    ```
+- Client should now be hosted on `localhost:3000`
 
 # Preview
 ![Movie Fan preview](./movie.gif)
