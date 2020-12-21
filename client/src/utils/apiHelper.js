@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://movie-fan-app.herokuapp.com/';
+const BASE_URL = 'http://localhost:3005/';
+// const BASE_URL = 'https://movie-fan-app.herokuapp.com/';
 const SEARCH_URL = BASE_URL + 'omdb/search';
 const GET_URL = BASE_URL + 'omdb/movie';
 
@@ -37,6 +38,12 @@ export const upVote = async (id) => {
 /** Add a downvote to a movie in the database */
 export const downVote = async (id) => {
   const result = await axios.patch(BASE_URL+id+'/down');
+  return result.data;
+}
+
+/** Get the top 5 movies by upvote and downvote */
+export const getTopVotes = async (id) => {
+  const result = await axios.get(BASE_URL+'top-votes');
   return result.data;
 }
 
