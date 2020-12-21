@@ -9,8 +9,8 @@ const {
 const router = new express.Router();
 
 router.post("/", createMovie);
+router.get("/top-votes", getTopVotes);
 router.get("/:id", getMovie);
 router.patch("/:id/:vote", addVote);
-router.get("/top-votes/:direction", getTopVotes);
 
 module.exports = router;

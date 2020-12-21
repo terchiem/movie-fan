@@ -68,19 +68,19 @@ const addVote = async (req, res, next) => {
 }
 
 /**
- * GET /top-votes/:direction
+ * GET /top-votes
  * Gets 5 most upvoted/downvoted movies
  */
 
 const getTopVotes = async (req, res, next) => {
-  const vote = req.params.direction === 'up' ? 'upVote' : 'downVote';
-  const movie = await Movie.find().sort({ [vote]: -1 }).limit(5);
+  const topUpVotes = await Movie.find().sort({ upVote: -1 }).limit(5);
+  const topDownVotes = await Movie.find().sort({ downVote: -1 }).limit(5);
 
-  if (!movie) {
-    return next(new ExpressError('Could not find movie', 404));
+  if (!topUpVotes || !topDownVotes) {
+    return next(new ExpressError('Could not get top votes', 400));
   }
 
-  return res.send(movie);
+  return res.send({topUpVotes, topDownVotes});
 }
 
 module.exports = {
