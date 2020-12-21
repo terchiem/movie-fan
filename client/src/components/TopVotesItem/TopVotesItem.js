@@ -8,10 +8,16 @@ function TopVotesItem({ movie }) {
   return (
     <li className="TopVotesItem">
       <Link to={`/${_id}`}>{title}</Link>
-      <i className="fa fa-thumbs-up"></i>
-      <span>{upVote}</span>
-      <i className="fa fa-thumbs-down"></i>
-      <span>{downVote}</span>
+      <div className="TopVotesItem-votes">
+        <div className="TopVotesItem-votegroup up">
+          <i className="fa fa-thumbs-up"></i>
+          <span>{upVote}</span>
+        </div>
+        <div className="TopVotesItem-votegroup down">
+          <i className="fa fa-thumbs-down"></i>
+          <span>{downVote}</span>
+        </div>
+      </div>
     </li>
   )
 }

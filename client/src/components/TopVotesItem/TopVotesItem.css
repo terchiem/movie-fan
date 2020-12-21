@@ -1,3 +1,38 @@
 .TopVotesItem {
+  padding: 0.2em 0;
+  border-bottom: 1px solid var(--midGray);
+}
 
+.TopVotesItem:last-child {
+  border-bottom: none;
+}
+
+.TopVotesItem a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.TopVotesItem a:hover {
+  color: var(--primaryGreen);
+}
+.TopVotesItem-votes {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+.TopVotesItem-votegroup {
+  display: inline-block;
+  margin: 0 0.2em;
+}
+
+.TopVotesItem-votegroup.up i {
+  color: var(--primaryGreen);
+}
+
+.TopVotesItem-votegroup.down i {
+  color: var(--red);
+}
+
+.TopVotesItem-votegroup i {
+  margin-right: 0.2em;
 }
